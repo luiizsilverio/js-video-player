@@ -87,21 +87,25 @@ video {
 
 /* Progress Bar */
 .progress-range {
-
+  height: 8px;
+  width: calc(100% - 30px);
+  background-color: rgba(202, 202, 202, .5);
   margin: auto;
   border-radius: 10px;
   position: absolute;
   left: 15px;
   top: 15px;
   cursor: pointer;
-
+  transition: transform .1s ease-in-out;
 }
 
-
+.progress-range:hover {
+  transform: scaleY(1.4);
+}
 
 .progress-bar {
   background: var(--primary-color);
-  width: 50%;
+  width: 20%;
   height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease;
@@ -119,8 +123,7 @@ video {
   margin-right: 15px;
 }
 
-.fa-play:hover,
-.fa-pause:hover {
+.fa-play:hover, .fa-pause:hover, .fa-volume-up:hover {
   color: var(--primary-color);
   cursor: pointer;
 }
@@ -170,19 +173,23 @@ video {
   margin-right: 15px;
 }
 
-
+select, option {
+  cursor: pointer;
+}
 
 select {
-
+  background: transparent;
   color: var(--font-color);
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   position: relative;
   top: -2.5px;
   border-radius: 5px;
 }
 
-
+select:focus {
+  outline: none;
+}
 
 select > option {
   background: rgba(0, 0, 0, 0.9);
